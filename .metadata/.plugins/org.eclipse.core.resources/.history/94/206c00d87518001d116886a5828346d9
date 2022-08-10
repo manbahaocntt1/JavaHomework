@@ -1,0 +1,22 @@
+package bai2;
+
+public class Main {
+
+	public static void main(String[] args) {
+//		Tạo class Address: id, district, province, viết các phương thức nhập, xuất.
+//		Tạo class Student: id, name, age, Address, viết các phương thức nhập, xuất.
+//		Các id không được trùng nhau.
+//		Tại hàm main viết menu thực hiện các chức năng sau: 
+//		1. Nhập một mảng n sinh viên
+//		2. Hiển thị thông tin các sinh viên ra màn hình.
+//		3. Tìm kiếm sinh viên theo Id và hiển thị ra màn hình.
+//		4. Sửa các sinh viên có province là “Thanh Hóa” thành “Hải Phòng”
+//		5. Xóa sinh viên theo Id.
+
+		Student a= new Student();
+		a.input();
+		a.output();
+		
+	}
+
+}

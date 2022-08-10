@@ -1,0 +1,23 @@
+package bai1;
+import java.util.Scanner;
+public class May {
+	private static Scanner sc= new Scanner (System.in);
+	private String maMay, kieuMay, tinhTrang;
+	
+	public void input()
+	{
+		System.out.println("Nhap ma may: ");
+		maMay=sc.nextLine();
+		System.out.println("Nhap kieu may: ");
+		kieuMay=sc.nextLine();
+		System.out.println("Nhap tinh trang: ");
+		tinhTrang=sc.nextLine();
+		
+	}
+	public void output()
+	{
+		System.out.printf("%-15s%-15s%-15s\n","Ma May","Kieu may","tinhTrang");
+		System.out.printf("%-15s%-15s%-15s\n",maMay,kieuMay,tinhTrang);
+	}
+
+}

@@ -1,0 +1,78 @@
+package bai3;
+
+public class Main {
+public static boolean isPrime(int n)
+
+{
+	int dem=0;
+	for(int i=1; i<n; i++)
+	{
+		if(n%i==0)
+			dem++;
+	}
+	if(dem==1)
+	return true;
+	else return false;
+}
+public static boolean isPrime(long n)
+
+{
+	int dem=0;
+	for(int i=1; i<n; i++)
+	{
+		if(n%i==0)
+			dem++;
+	}
+	if(dem==1)
+	return true;
+	else return false;
+	
+}
+public static boolean isPrime(float n)
+
+{
+	int x= (int)n;
+	if(x!=n)
+	return false;
+	else 
+	{
+		int dem=0;
+		for(int i=1; i<x; i++)
+		{
+			if(n%i==0)
+				dem++;
+		}
+		if(dem==1)
+		return true;
+		else return false;
+	}
+	
+}
+public static boolean isPrime(double n)
+
+{
+	int x= (int)n;
+	if(x!=n)
+	return false;
+	else 
+	{
+		int dem=0;
+		for(int i=1; i<x; i++)
+		{
+			if(n%i==0)
+				dem++;
+		}
+		if(dem==1)
+		return true;
+		else return false;
+	}
+	
+}
+
+	public static void main(String[] args) {
+
+		System.out.println(isPrime(3)+" "+isPrime(3.14)+" "+isPrime(3.2)+" "+isPrime(3f)+" "+isPrime(9));
+		
+	}
+
+}

@@ -1,0 +1,9 @@
+package bai1;
+
+import java.util.Scanner;
+
+public class QuanLy {
+	private static Scanner sc= new Scanner (System.in);
+	private String maQL, hoTen;
+	
+}

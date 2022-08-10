@@ -1,0 +1,39 @@
+package bai2;
+import java.util.Scanner;
+public class Main {
+	private static Scanner sc= new Scanner (System.in);
+	public void Nhap()
+	{
+		int n;
+		System.out.println("Nhap so luong SV: ");
+		n=sc.nextInt();
+		sc.nextLine();
+		Student arr[]= new Student[n];
+		for(int i=0; i<n; i++)
+		{
+			 arr[i]= new Student ();
+		}
+		for(int i=0; i<n; i++)
+		{
+			arr[i].input();
+		}
+	}
+	public 
+
+
+	public static void main(String[] args) {
+//		Tại hàm main viết menu thực hiện các chức năng sau: 
+//		1. Nhập một mảng n sinh viên
+//		2. Hiển thị thông tin các sinh viên ra màn hình.
+//		3. Tìm kiếm sinh viên theo Id và hiển thị ra màn hình.
+//		4. Sửa các sinh viên có province là “Thanh Hóa” thành “Hải Phòng”
+//		5. Xóa sinh viên theo Id.
+
+		Student a= new Student();
+		a.input();
+		a.output();
+		
+		
+	}
+
+}

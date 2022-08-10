@@ -1,0 +1,39 @@
+package bai2;
+import java.util.Scanner;
+public class Student {
+//	Tạo class Address: id, district, province, viết các phương thức nhập, xuất.
+//	Tạo class Student: id, name, age, Address, viết các phương thức nhập, xuất.
+//	Các id không được trùng nhau.
+//	Tại hàm main viết menu thực hiện các chức năng sau: 
+//	1. Nhập một mảng n sinh viên
+//	2. Hiển thị thông tin các sinh viên ra màn hình.
+//	3. Tìm kiếm sinh viên theo Id và hiển thị ra màn hình.
+//	4. Sửa các sinh viên có province là “Thanh Hóa” thành “Hải Phòng”
+//	5. Xóa sinh viên theo Id.
+	private static Scanner sc= new Scanner (System.in);
+	private String id, name;
+	private int age;
+	private Address address = new Address();
+	
+	public void input()
+	{
+		System.out.println("Nhap ma id hoc sinh: ");
+		id=sc.nextLine();
+		System.out.println("Nhap ma ho ten hoc sinh: ");
+		name=sc.nextLine();
+		System.out.println("Nhap ma tuoi hoc sinh: ");
+		age=sc.nextInt();
+		sc.nextLine();
+		System.out.println("Nhap thong tin dia chi: ");
+		address.input();
+
+	}
+	public void output()
+	{
+		System.out.printf("%-15s%-15s%-15s\n","ID","Ho Ten","Tuoi");
+		System.out.printf("-15s%-15s%-15d\n",id,name,age);
+		System.out.print("Dia Chi: ");
+		address.output();
+	}
+
+}

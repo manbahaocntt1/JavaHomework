@@ -1,0 +1,169 @@
+package bai2;
+import java.util.Scanner;
+public class Student {
+
+	private static Scanner sc= new Scanner (System.in);
+	private String  name;
+	private int id, age;
+	private Address address = new Address();
+	private static int x=1;
+	Student ()
+	{
+		id=x++;
+		
+	}
+	public void input()
+	{
+	
+		System.out.println("Nhap ho ten hoc sinh: ");
+		name=sc.nextLine();
+		System.out.println("Nhap tuoi hoc sinh: ");
+		age=sc.nextInt();
+		sc.nextLine();
+		System.out.println("Nhap thong tin dia chi: ");
+		address.input();
+
+	}
+	public void output()
+	{
+		System.out.println("Ma ID: "+id+"\nHo ten: "+name+"\nTuoi: "+age);
+		System.out.print("Dia Chi: ");
+		address.output();
+	}
+	private static int n;
+	private static Student arr[]= new Student[n];
+	
+	private static Student[] Nhap(Student arr[])
+	{
+		System.out.println("Nhap so luong SV: ");
+		n=sc.nextInt();
+		sc.nextLine();
+		for(int i=0; i<n; i++)
+		{
+			 arr[i]= new Student ();
+		}
+		for(int i=0; i<n; i++)
+		{
+			System.out.println("Nhap thong tin SV thu "+(i+1));
+			arr[i].input();
+		}
+		return arr;
+	}
+	public  static  boolean isEmpty()
+	{
+        if (n == 0)
+        {
+            System.out.println("Mang chua duoc nhap, moi nhap lua chon 1.");
+            return true;
+        }
+        return false;
+    }
+	private static void Xuat(Student arr[])
+	{
+		if(!isEmpty())
+		{
+			for(int i=0; i<n; i++)
+			{
+				arr[i].output();
+			}
+		}
+
+	}
+	public static void TimKiem(Student arr[])
+	{
+		int ids;
+		System.out.println("Nhap ma id can tim: ");
+		ids=sc.nextInt();
+		if(!isEmpty())
+		{
+			for(int i=0; i<n; i++)
+			{
+				if(arr[i].id==ids)
+				{
+					arr[i].output();
+				}
+				
+			}
+		}
+	}
+	public static void Change(Student arr[])
+	{
+		if(!isEmpty())
+		{
+		for(int i=0; i<n; i++)
+		{
+			if(arr[i].address.getProvince()=="Thanh Hoa")
+			{
+				arr[i].address.setProvince(arr[i].address.getProvince().replace("Thanh Hoa", "Hai Phong"));
+			}
+		}
+		Xuat(arr);
+		}
+		
+	}
+	public static void Xoa(Student arr[])
+	{
+		if(!isEmpty())
+		{
+		 System.out.println("Nhap vao id sinh vien can xoa: ");
+         int xoa;
+         xoa= sc.nextInt();
+         for (int i = 0; i < n; i++)
+         {
+             if (arr[i].id == xoa) 
+             {
+            	 for (int j = i; j < n - 1; j++)
+            	 {
+                     arr[i] = arr[i + 1];
+                 }
+             }
+         }
+         n--;
+         System.out.println("Thong tin cac sinh vien sau khi xoa ");
+         Xuat(arr);
+		}
+	}
+
+	public static void Menu()
+	{
+		System.out.println("----------------------Menu----------------------");
+        System.out.println("1. Nhập một mảng n sinh viên.");
+        System.out.println("2. Hiển thị thông tin các sinh viên ra màn hình.");
+        System.out.println("3. Tìm kiếm sinh viên theo Id và hiển thị ra màn hình.");
+        System.out.println("4. Sửa các sinh viên có province là “Thanh Hóa” thành “Hải Phòng”");
+        System.out.println("5. Xóa sinh viên theo Id.");
+        System.out.println("-------------------------------------------------");
+        System.out.print("Mời bạn lựa chọn: ");
+        int chon;
+        do
+        {
+   
+            chon = sc.nextInt();
+            switch (chon){
+                case 1 :
+                    Nhap(arr);
+                    break;
+                case 2:
+                    Xuat(arr);
+                    break;
+                case 3:
+                    TimKiem(arr);
+                    break;
+                case 4:
+                    Change(arr);
+                    break;
+                case 5:
+                    Xoa(arr);
+                    break;
+                default:
+                    System.out.println("Lua chon khong dung!!!");
+            }
+        }
+        while (chon != 5);
+    }
+	public static void main(String[] args) 
+	{
+		Menu();
+	}
+	
+}

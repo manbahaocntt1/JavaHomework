@@ -1,0 +1,11 @@
+package bai1;
+
+public class Main {
+
+	public static void main(String[] args) {
+		May a;
+		a.input();
+		a.output();
+	}
+
+}

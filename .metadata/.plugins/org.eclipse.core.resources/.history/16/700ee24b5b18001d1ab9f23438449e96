@@ -1,0 +1,12 @@
+package bai1;
+import java.util.Scanner;
+public class PhongMay {
+
+	private static Scanner sc= new Scanner (System.in);
+	private String maPhong, tenPhong;
+	private double dienTich;
+	QuanLy x;
+	May y;
+	
+
+}

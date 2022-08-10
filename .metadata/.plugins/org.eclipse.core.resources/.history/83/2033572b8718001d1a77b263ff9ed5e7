@@ -1,0 +1,120 @@
+package bai2;
+import java.util.Scanner;
+public class Main {
+	private static Scanner sc= new Scanner (System.in);
+	private static int n;
+	private static Student arr[]= new Student[n];
+	
+	private static void Nhap()
+	{
+		System.out.println("Nhap so luong SV: ");
+		n=sc.nextInt();
+		sc.nextLine();
+		for(int i=0; i<n; i++)
+		{
+			 arr[i]= new Student ();
+		}
+		for(int i=0; i<n; i++)
+		{
+			System.out.println("Nhap thong tin SV thu "+(i+1));
+			arr[i].input();
+		}
+	}
+	public  static  boolean isEmpty()
+	{
+        if (n == 0)
+        {
+            System.out.println("Mang chua duoc nhap, moi nhap lua chon 1.");
+            return true;
+        }
+        return false;
+    }
+	private static void Xuat()
+	{
+		if(!isEmpty())
+		{
+			for(int i=0; i<n; i++)
+			{
+				arr[i].output();
+			}
+		}
+
+	}
+	public static void TimKiem()
+	{
+		int ids;
+		System.out.println("Nhap ma id can tim: ");
+		ids=sc.nextInt();
+		if(!isEmpty())
+		{
+			for(int i=0; i<n; i++)
+			{
+				if(arr[i].id==ids)
+				{
+					
+				}
+				
+			}
+		}
+	}
+	public static void Change()
+	{
+		
+	}
+	public static void Xoa()
+	{
+		
+	}
+
+	public static void Menu(){
+        int chon;
+        do{
+            System.out.println("----------------------Menu----------------------");
+            System.out.println("1. Nhập một mảng n sinh viên.");
+            System.out.println("2. Hiển thị thông tin các sinh viên ra màn hình.");
+            System.out.println("3. Tìm kiếm sinh viên theo Id và hiển thị ra màn hình.");
+            System.out.println("4. Sửa các sinh viên có province là “Thanh Hóa” thành “Hải Phòng”");
+            System.out.println("5. Xóa sinh viên theo Id.");
+            System.out.println("-------------------------------------------------");
+            System.out.print("Mời bạn lựa chọn: ");
+            chon = sc.nextInt();
+            switch (chon){
+                case 1 :
+                    Nhap();
+                    break;
+                case 2:
+                    Xuat();
+                    break;
+                case 3:
+                    TimKiem();
+                    break;
+                case 4:
+                    delete();
+                    break;
+                case 5:
+                    reverse();
+                    break;
+                case 6:
+                    showElement();
+                    break;
+                case 7:
+                    showSum();
+                    break;
+                case 8:
+                    System.out.println("Chương trình kết thúc");
+                    break;
+                default:
+                    System.out.println("Lựa chọn không tồn tại!!!");
+            }
+        } while (choose != 8);
+    }
+
+
+	public static void main(String[] args) {
+
+
+		
+		
+	}
+
+}

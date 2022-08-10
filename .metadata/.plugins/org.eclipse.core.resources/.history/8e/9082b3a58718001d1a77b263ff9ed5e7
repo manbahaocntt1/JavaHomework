@@ -1,0 +1,24 @@
+package bai2;
+import java.util.Scanner;
+public class Address {
+
+	private static Scanner sc= new Scanner (System.in);
+	private String  district, province;
+	private int id;
+	public void input()
+	{
+		System.out.println("Nhap ma id dia chi: ");
+		id= sc.nextInt();
+		sc.nextLine();
+		System.out.println("Nhap quan/huyen: ");
+		district= sc.nextLine();
+		System.out.println("Nhap tinh: ");
+		province= sc.nextLine();
+		
+	}
+	public void output()
+	{
+		System.out.println(id+" / "+district+" / "+province);
+		
+	}
+}
